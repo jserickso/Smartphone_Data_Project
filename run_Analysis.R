@@ -15,11 +15,11 @@ run_Analysis <- function(folder_loc = "C:/Users/EricksonsWin7/Documents/Courses/
   test_sub <- read.table(paste(folder_loc,"/test/subject_test.txt",sep=""))
   
   #Read in features list and activity labels
-  features <- read.table(paste(folder_loc,"/features.txt",sep=""))
+  features <- read.table(paste(folder_loc,"/features.txt",sep=""),colClasses="character")
   act_lbl <- read.table(paste(folder_loc,"/activity_labels.txt",sep=""))
   
   #Set the column names of training and test data tables
-  variables <- make.names(features$V2,unique = TRUE)
+  variables <- make.unique(features$V2,sep=".")
   colnames(train_dat) <- variables
   colnames(test_dat) <- variables
   colnames(train_sub) <- c("subject")
@@ -42,8 +42,9 @@ run_Analysis <- function(folder_loc = "C:/Users/EricksonsWin7/Documents/Courses/
   small_dat <- select(dat,subject,act_name, contains("mean",ignore.case = FALSE),+
                         contains("std", ignore.case = FALSE))
   
-  #Group and summarize the data
+  #Group, summarize, and output the tidy data set
   tidy_dat <- summarise_each(group_by(small_dat,subject,act_name),funs(mean))
   write.table(tidy_dat,file=paste(folder_loc,"tidy_data.txt"),row.names = FALSE)
+  promptData(tidy_dat,paste(folder_loc,"/tidy_data_codebook.md",sep=""))
   
 }

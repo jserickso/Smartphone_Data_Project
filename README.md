@@ -56,7 +56,7 @@ This script did the following steps to create a tidy data set:
 
 	address <- "https://s3.amazonaws.com/coursera-uploads/user-159e9c53235ebb833afda639/975119/asst-3/f37723f0ab6b11e5b8512f89a785ab28.txt"
 	address <- sub("^https", "http", address)
-	data <- read.table(url(address), header = TRUE)
+	data <- read.table(url(address), header = TRUE, check.names = FALSE)
 	View(data)
 
 

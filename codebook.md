@@ -29,10 +29,10 @@ A data frame with 180 observations on the following 81 variables.
 ## Variable Descriptions
 Original variable names were kept from the original data set.  While interpretting these variable names, use the guidelines below.  For information on the full data set, refer to "features_info.txt"
 - Prefixes:
-*  't' denotes time domain. Note: Time domain signalswere captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
-*  'f' denotes frequency domain. Note:  A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
-*  Acceleration Signals
-*  Acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+*    't' denotes time domain. Note: Time domain signalswere captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
+*    'f' denotes frequency domain. Note:  A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
+*    Acceleration Signals
+*    Acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 *  'Acc' in the variable name denotes an acceleration signal as described above.
 *  'Body' denotes the body component of the acceleration signal.
 *  'Gravity' denotes the gravity component of the acceleration signal.

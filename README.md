@@ -38,6 +38,19 @@ deviations averaged across each subject, activity pair.
 
 -The plyr and dplyr packages should be installed before running the script, run_Analysis.
 
+## Script Information:
+This script did the following steps to create a tidy data set:
+- Read in all data files (8 total) separately. See README.md for more information on input data files.
+- Edited the features file information, which consists of variables (aka column names), to make the column names unique by adding a "." separator when necessary.
+- Applied the new unique variable names to the tables extracted from the x_train and x_test data files.
+- Applied the variable name "subject" to the tables extracted from the subject_train and subject_test data files.
+- Sorted through and matched the activity labels from 'activity.txt' to the corresponding IDs in the 'y_test.txt' and 'x_test.txt' data files.
+- Created a table for all the training information from the labeled tables created from 'subject_train.txt', 'x_train.txt', and 'y_train.txt' files. Dimensions are 7352 rows x 564 cols.
+- Created a table for all the test information from the labeled tables created from 'subject_test.txt', 'x_test.txt', and 'y_test.txt' files. Dimensions are 2947 rows x 564 cols.
+- Combined the two tables, train and test, to create a data set with all the information. Dimensions of full data set are 10299 rows x 564 cols.
+- Created a reduced data set with only the subject, activity names, means, and standard deviations (std). Dimensions are 10299 rows x 81 columns.
+- Created a final data set with the average of each variable for each activity done by each subject.  Dimensions of the final data set are 180 rows by 81 columns.
+- Created a table with the final data set in the original data folder, specified in the script.
 
 ## How to read the tidy_data.txt into R:
 

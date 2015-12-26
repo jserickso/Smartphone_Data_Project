@@ -29,34 +29,34 @@ A data frame with 180 observations on the following 81 variables.
 ## Variable Descriptions
 Original variable names were kept from the original data set.  While interpretting these variable names, use the guidelines below.  For information on the full data set, refer to "features_info.txt"
 - Prefixes:
-  * 't' denotes time domain. Note: Time domain signalswere captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
-  * 'f' denotes frequency domain. Note:  A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
+  * **'t'** denotes time domain. Note: Time domain signalswere captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
+  * **'f'** denotes frequency domain. Note:  A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
 - Acceleration Signals
   * Acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
-  * 'Acc' in the variable name denotes an acceleration signal as described above.
+  * **'Acc'** in the variable name denotes an acceleration signal as described above.
   * The acceleration signals have the units of g (standard gravity units)
-  * 'Body' denotes the body component of the acceleration signal.
-  * 'Gravity' denotes the gravity component of the acceleration signal.
+  * **'Body'** denotes the body component of the acceleration signal.
+  * **'Gravity'** denotes the gravity component of the acceleration signal.
 - Jerk Signals
   * The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ).
-  * 'Jerk' in the variable name denotes a Jerk signal as described above.
+  * **'Jerk'** in the variable name denotes a Jerk signal as described above.
   * The jerk signals have the units of g (standard gravity units)
 - Gyro Signals
   * The angular velocity vector measured by the gyroscope for each window sample.
-  * 'Gyro' in the name denotes a Gyro signal.
+  * **'Gyro'** in the name denotes a Gyro signal.
   * The units for the Gyro signals are radians/sec.
 - Magnitude Signals
   * The magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
-  * 'Mag' in the variable name denotes a magnitude signal as described above.
+  * **'Mag'** in the variable name denotes a magnitude signal as described above.
 - Non-magnitude Signals
   * These signals were used to estimate variables of the feature vector for each pattern.
-  * '-X' denotes signals for the X direction.
-  * '-Y' denotes signals for the Y direction.
-  * '-Z' denotes signals for the Z direction.
+  * **'-X'** denotes signals for the X direction.
+  * **'-Y'** denotes signals for the Y direction.
+  * **'-Z'** denotes signals for the Z direction.
 - Suffix
-  * 'mean()' denotes the estimated mean of the collected data
-  * 'std()' denotes the estimated standard deviation of the collected data.
-  * 'meanFreq()' denotes the weighted average of the frequency components to obtain a mean frequency
+  * **'mean()'** denotes the estimated mean of the collected data
+  * **'std()'** denotes the estimated standard deviation of the collected data.
+  * **'meanFreq()'** denotes the weighted average of the frequency components to obtain a mean frequency
 
 ##Table of Variables
 | Variable Name | Description | Class & Levels |

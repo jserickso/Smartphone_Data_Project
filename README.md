@@ -42,7 +42,7 @@ run_Analysis is the absolute path of the UCI HAR Dataset folder.
 
 ## How to read the tidy_data.txt into R:
 
-	address <- "https://s3.amazonaws.com/coursera-uploads/user-159e9c53235ebb833afda639/975119/asst-3/1deb2160ab6a11e58917d39e608191a8.txt"
+	address <- "https://s3.amazonaws.com/coursera-uploads/user-159e9c53235ebb833afda639/975119/asst-3/f37723f0ab6b11e5b8512f89a785ab28.txt"
 	address <- sub("^https", "http", address)
 	data <- read.table(url(address), header = TRUE)
 	View(data)

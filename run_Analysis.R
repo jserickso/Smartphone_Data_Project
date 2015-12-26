@@ -1,22 +1,22 @@
-run_Analysis <- function(folder_loc = "C:/Users/EricksonsWin7/Documents/Courses/Clean_Data/Project/UCI HAR Dataset/"){
+run_Analysis <- function(){
 
   #packages to use, manually install these before running script
   library(plyr)
   library(dplyr)
   
   #Read in the training data
-  train_dat <- read.table(paste(folder_loc,"/train/X_train.txt",sep=""))
-  train_act <- read.table(paste(folder_loc,"/train/y_train.txt",sep=""))
-  train_sub <- read.table(paste(folder_loc,"/train/subject_train.txt",sep=""))
+  train_dat <- read.table("./UCI HAR Dataset/train/X_train.txt")
+  train_act <- read.table("./UCI HAR Dataset/train/y_train.txt")
+  train_sub <- read.table("./UCI HAR Dataset/train/subject_train.txt")
   
   #Read in the test data
-  test_dat <- read.table(paste(folder_loc,"/test/X_test.txt",sep=""))
-  test_act <- read.table(paste(folder_loc,"/test/y_test.txt",sep=""))
-  test_sub <- read.table(paste(folder_loc,"/test/subject_test.txt",sep=""))
+  test_dat <- read.table("./UCI HAR Dataset/test/X_test.txt")
+  test_act <- read.table("./UCI HAR Dataset/test/y_test.txt")
+  test_sub <- read.table("./UCI HAR Dataset/test/subject_test.txt")
   
   #Read in features list and activity labels
-  features <- read.table(paste(folder_loc,"/features.txt",sep=""),colClasses="character")
-  act_lbl <- read.table(paste(folder_loc,"/activity_labels.txt",sep=""))
+  features <- read.table("./UCI HAR Dataset/features.txt",colClasses="character")
+  act_lbl <- read.table("./UCI HAR Dataset/activity_labels.txt")
   
   #Set the column names of training and test data tables
   variables <- make.unique(features$V2,sep=".")
@@ -44,7 +44,7 @@ run_Analysis <- function(folder_loc = "C:/Users/EricksonsWin7/Documents/Courses/
   
   #Group, summarize, and output the tidy data set
   tidy_dat <- summarise_each(group_by(small_dat,subject,act_name),funs(mean))
-  write.table(tidy_dat,file=paste(folder_loc,"tidy_data.txt"),row.names = FALSE)
-  promptData(tidy_dat,paste(folder_loc,"/tidy_data_codebook.md",sep=""))
+  write.table(tidy_dat,file="./UCI HAR Dataset/tidy_data.txt",row.names = FALSE)
+  promptData(tidy_dat,"./UCI HAR Dataset/tidy_data_info.md")
   
 }

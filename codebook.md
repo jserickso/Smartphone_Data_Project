@@ -54,8 +54,9 @@ Original variable names were kept from the original data set.  While interpretti
   * '-Y' denotes signals for the Y direction.
   * '-Z' denotes signals for the Z direction.
 - Suffix
-  * 'mean' denotes the estimated mean of the collected data
-  * 'std' denotes the estimated standard deviation of the collected data.
+  * 'mean()' denotes the estimated mean of the collected data
+  * 'std()' denotes the estimated standard deviation of the collected data.
+  * 'meanFreq()' denotes the weighted average of the frequency components to obtain a mean frequency
 
 ##Table of Variables
 | Variable Name | Description | Class & Levels |

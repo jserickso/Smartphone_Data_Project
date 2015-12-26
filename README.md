@@ -34,8 +34,7 @@ deviations averaged across each subject, activity pair.
 
 ## Assumptions/Requirements:
 
--Data must be in the same folder structure as above, the only argument for 
-run_Analysis is the absolute path of the UCI HAR Dataset folder.
+-Data must be in the same folder structure as above, and must be unzipped into the working directory.  The working directory should be a level above UCI HAR Dataset.
 
 -The plyr and dplyr packages should be installed before running the script, run_Analysis.
 

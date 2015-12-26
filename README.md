@@ -10,33 +10,33 @@
 ## Data Inputs:	
 
 ### From UCI HAR Dataset folder
--activity_labels.txt is used as a key to translate the
+- activity_labels.txt is used as a key to translate the
 activity IDs to the activity names
--features.txt was used to label the column names of the
+- features.txt was used to label the column names of the
 X_train and X_test data sets
 
 ### From UCI HAR Dataset/test
--X_test.txt is the full set of all the inertial signals
--y_test.txt lists the activity IDs for each row in X_test
--subject_test.txt lists the subjects for each row in X_test
+- X_test.txt is the full set of all the inertial signals
+- y_test.txt lists the activity IDs for each row in X_test
+- subject_test.txt lists the subjects for each row in X_test
 		
 ### From UCI HAR Dataset/train
--X_train.txt is the full set of all the inertial signals
--y_train.txt lists the activity IDs for each row in X_train
--subject_train.txt lists the subjects for each row in X_train
+- X_train.txt is the full set of all the inertial signals
+- y_train.txt lists the activity IDs for each row in X_train
+- subject_train.txt lists the subjects for each row in X_train
 
 ## Data Output:  
 
 ### To UCI HAR Dataset folder
--tidy_data.txt is the reduced table of means and standard 
+- tidy_data.txt is the reduced table of means and standard 
 deviations averaged across each subject, activity pair.
 							
 
 ## Assumptions/Requirements:
 
--Data must be in the same folder structure as above, and must be unzipped into the working directory.  The working directory should be a level above UCI HAR Dataset.
+- Data must be in the same folder structure as above, and must be unzipped into the working directory.  The working directory should be a level above UCI HAR Dataset.
 
--The plyr and dplyr packages should be installed before running the script, run_Analysis.
+- The plyr and dplyr packages should be installed before running the script, run_Analysis.
 
 ## Script Information:
 This script did the following steps to create a tidy data set:

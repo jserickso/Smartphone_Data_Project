@@ -34,11 +34,17 @@ Original variable names were kept from the original data set.  While interpretti
 - Acceleration Signals
   * Acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
   * 'Acc' in the variable name denotes an acceleration signal as described above.
+  * The acceleration signals have the units of g (standard gravity units)
   * 'Body' denotes the body component of the acceleration signal.
   * 'Gravity' denotes the gravity component of the acceleration signal.
 - Jerk Signals
   * The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ).
   * 'Jerk' in the variable name denotes a Jerk signal as described above.
+  * The jerk signals have the units of g (standard gravity units)
+- Gyro Signals
+  * The angular velocity vector measured by the gyroscope for each window sample.
+  * 'Gyro' in the name denotes a Gyro signal.
+  * The units for the Gyro signals are radians/sec.
 - Magnitude Signals
   * The magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
   * 'Mag' in the variable name denotes a magnitude signal as described above.

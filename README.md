@@ -41,7 +41,7 @@ deviations averaged across each subject, activity pair.
 ## Script Information:
 This script did the following steps to create a tidy data set:
 - Read in all data files (8 total) separately. See README.md for more information on input data files.
-- Edited the features file information, which consists of variables (aka column names), to make the column names unique by adding a "." separator when necessary.
+- Edited the features file information, which consists of variables (aka column names), to make the column names unique by adding a "." separator when necessary and made them meet R standards by removing "()" and replacing "-" with "_".
 - Applied the new unique variable names to the tables extracted from the x_train and x_test data files.
 - Applied the variable name "subject" to the tables extracted from the subject_train and subject_test data files.
 - Sorted through and matched the activity labels from 'activity.txt' to the corresponding IDs in the 'y_test.txt' and 'x_test.txt' data files.
@@ -54,9 +54,9 @@ This script did the following steps to create a tidy data set:
 
 ## How to read the tidy_data.txt into R:
 
-	address <- "https://s3.amazonaws.com/coursera-uploads/user-159e9c53235ebb833afda639/975119/asst-3/f37723f0ab6b11e5b8512f89a785ab28.txt"
+	address <- "https://s3.amazonaws.com/coursera-uploads/user-159e9c53235ebb833afda639/975119/asst-3/4cd10f50ac6211e5b5b9f35821789701.txt"
 	address <- sub("^https", "http", address)
-	data <- read.table(url(address), header = TRUE, check.names = FALSE)
+	data <- read.table(url(address), header = TRUE)
 	View(data)
 
 

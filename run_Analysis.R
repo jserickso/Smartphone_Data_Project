@@ -18,8 +18,12 @@ run_Analysis <- function(){
   features <- read.table("./UCI HAR Dataset/features.txt",colClasses="character")
   act_lbl <- read.table("./UCI HAR Dataset/activity_labels.txt")
   
-  #Set the column names of training and test data tables
+  #Modify the variable names to make them unique and meet R standards
   variables <- make.unique(features$V2,sep=".")
+  variables <- sapply(variables,gsub,pattern="()",replacement="", fixed =TRUE)
+  variables <- sapply(variables,gsub,pattern="-",replacement="_")
+  
+  #Set the column names of training and test data tables
   colnames(train_dat) <- variables
   colnames(test_dat) <- variables
   colnames(train_sub) <- c("subject")

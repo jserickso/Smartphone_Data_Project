@@ -12,7 +12,7 @@
 
 ## Transformations made to the data.
 - Read in all data files (8 total) separately. See README.md for more information on input data files.
-- Edited the features file information, which consists of variables (aka column names), to make the column names unique by adding a "." separator when necessary.
+- Edited the features file information, which consists of variables (aka column names), to make the column names unique by adding a "." separator when necessary and made them meet R standards by removing "()" and replacing "-" with "_".
 - Applied the new unique variable names to the tables extracted from the x_train and x_test data files.
 - Applied the variable name "subject" to the tables extracted from the subject_train and subject_test data files.
 - Sorted through and matched the activity labels from 'activity.txt' to the corresponding IDs in the 'y_test.txt' and 'x_test.txt' data files.
@@ -50,95 +50,95 @@ Original variable names were kept from the original data set.  While interpretti
   * **'Mag'** in the variable name denotes a magnitude signal as described above.
 - Non-magnitude Signals
   * These signals were used to estimate variables of the feature vector for each pattern.
-  * **'-X'** at the very end of the variable name denotes signals for the X direction.
-  * **'-Y'** at the very end of the variable name denotes signals for the Y direction.
-  * **'-Z'** at the very end of the variable name denotes signals for the Z direction.
+  * **'X'** at the very end of the variable name denotes signals for the X direction.
+  * **'Y'** at the very end of the variable name denotes signals for the Y direction.
+  * **'Z'** at the very end of the variable name denotes signals for the Z direction.
 - Suffix
-  * **'mean()'** denotes the estimated mean of the collected data
-  * **'std()'** denotes the estimated standard deviation of the collected data.
-  * **'meanFreq()'** denotes the weighted average of the frequency components to obtain a mean frequency
+  * **'mean'** denotes the estimated mean of the collected data
+  * **'std'** denotes the estimated standard deviation of the collected data.
+  * **'meanFreq'** denotes the weighted average of the frequency components to obtain a mean frequency
 
 ##Table of Variables
 | Variable Name | Description | Class & Levels |
 |---------------------------------|----------------------------------------------------------|-----------------------------------------------|
 | subject | ID of Subject | Integer 1-30 |
 | act_name | Activity Labels | Factor with 6 levels |
-| tBodyAcc-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAcc-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAcc-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAccMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerkMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerkMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-meanFreq()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-meanFreq()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-meanFreq()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-meanFreq()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-meanFreq()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-meanFreq()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-mean()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-mean()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-mean()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-meanFreq()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-meanFreq()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-meanFreq()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccMag-meanFreq() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyAccJerkMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyAccJerkMag-meanFreq() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroMag-meanFreq() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroJerkMag-mean() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroJerkMag-meanFreq() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAcc-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAcc-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAcc-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAcc-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerk-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyro-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerk-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tGravityAccMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyAccJerkMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| tBodyGyroJerkMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAcc-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccJerk-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-std()-X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-std()-Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyGyro-std()-Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyAccMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyAccJerkMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
-| fBodyBodyGyroJerkMag-std() | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAccMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerkMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerkMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_meanFreq_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_meanFreq_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_meanFreq_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_meanFreq_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_meanFreq_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_meanFreq_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_mean_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_mean_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_mean_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_meanFreq_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_meanFreq_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_meanFreq_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccMag-meanFreq | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyAccJerkMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyAccJerkMag-meanFreq | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroMag-meanFreq | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroJerkMag_mean | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroJerkMag-meanFreq | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAcc_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAcc_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerk_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyro_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerk_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tGravityAccMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyAccJerkMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| tBodyGyroJerkMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAcc_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccJerk_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_std_X | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_std_Y | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyGyro_std_Z | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyAccMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyAccJerkMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
+| fBodyBodyGyroJerkMag_std | Average value, see above for detail on naming convention | numeric, normalized and bounded within [-1,1] |
